@@ -1,0 +1,5 @@
+[2024-08-25 19:50:15 INF] La aplicación ha comenzado.
+[2024-08-25 19:50:16 ERR] Ocurrió un error inesperado.
+System.Exception: ¡Error intencional!
+   at Program.Main(String[] args) in D:\Projects\Clases\3 año\SextoModulo\Programacion6\Proyectos\Tareas-Programacion6\PruebasDeLog\Program.cs:line 19
+[2024-08-25 19:50:16 INF] La aplicación ha terminado.
