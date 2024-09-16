@@ -1,4 +1,8 @@
 ﻿using Spectre.Console;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading;
 
 public static class Program
 {
@@ -244,5 +248,149 @@ public static class Program
         // AnsiConsole.Write(image);
 
 
-    }
+        ////// SIMULACION DE PAGINACION 1
+        // var items = new List<string>
+        // {
+        //     "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", 
+        //     "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"
+        // };
+
+        // int pageSize = 3;
+        // int currentPage = 0;
+        // bool exit = false;
+
+        // while (!exit)
+        // {
+        //     AnsiConsole.Clear();
+        //     var pageItems = items.GetRange(currentPage * pageSize, Math.Min(pageSize, items.Count - currentPage * pageSize));
+
+        //     AnsiConsole.Write(new Markup($"[bold underline]Page {currentPage + 1}[/]\n\n"));
+        //     foreach (var item in pageItems)
+        //     {
+        //         AnsiConsole.WriteLine(item);
+        //     }
+
+        //     var choice = AnsiConsole.Prompt(
+        //         new SelectionPrompt<string>()
+        //             .AddChoices(new[] { "Next", "Previous", "Exit" }));
+
+        //     switch (choice)
+        //     {
+        //         case "Next":
+        //             if ((currentPage + 1) * pageSize < items.Count)
+        //             {
+        //                 currentPage++;
+        //             }
+        //             break;
+        //         case "Previous":
+        //             if (currentPage > 0)
+        //             {
+        //                 currentPage--;
+        //             }
+        //             break;
+        //         case "Exit":
+        //             exit = true;
+        //             break;
+        //     }
+        // }
+
+
+        ////// SIMULACION DE PAGINACION 2
+        ///
+        // var items = new List<string>
+        // {
+        //     "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", 
+        //     "Item 6", "Item 7", "Item 8", "Item 9", "Item 10"
+        // };
+
+        // var selection = AnsiConsole.Prompt(
+        //     new SelectionPrompt<string>()
+        //         .PageSize(3) // Número de elementos por página
+        //         .Title("Select an item")
+        //         .MoreChoicesText("[grey](Move up and down to reveal more)[/]")
+        //         .AddChoices(items));
+
+        // AnsiConsole.WriteLine($"You selected: {selection}");
+
+        //     var data = Enumerable.Range(1, 50).Select(i => $"Item {i}").ToList();
+        //     int pageSize = 5;
+        //     int currentPage = 1;
+        //     int totalPages = (int)Math.Ceiling((double)data.Count / pageSize);
+
+        //     while (true)
+        //     {
+        //         Console.Clear();
+        //         ShowPage(data, currentPage, pageSize);
+        //         Console.WriteLine();
+        //         Console.WriteLine($"Page {currentPage} of {totalPages}");
+
+        //         var key = Console.ReadKey(true).Key;
+
+        //         if (key == ConsoleKey.RightArrow && currentPage < totalPages)
+        //         {
+        //             currentPage++;
+        //         }
+        //         else if (key == ConsoleKey.LeftArrow && currentPage > 1)
+        //         {
+        //             currentPage--;
+        //         }
+        //         else if (key == ConsoleKey.Escape)
+        //         {
+        //             break;
+        //         }
+        //     }
+        // }
+
+        // static void ShowPage(List<string> data, int pageNumber, int pageSize)
+        // {
+        //     int skip = (pageNumber - 1) * pageSize;
+        //     var pageData = data.Skip(skip).Take(pageSize);
+
+        //     var table = new Table();
+        //     table.AddColumn("Item");
+
+        //     foreach (var item in pageData)
+        //     {
+        //         table.AddRow(item);
+        //     }
+
+        //     AnsiConsole.Render(table);
+        // }
+
+    //     // Lista de elementos para buscar
+    //     var items = new List<string>
+    //     {
+    //         "Apple", "Banana", "Orange", "Grape", "Pineapple", "Mango"
+    //     };
+
+    //     // Ciclo para implementar el buscador en tiempo real
+    //     while (true)
+    //     {
+    //         AnsiConsole.Clear();
+    //         var input = AnsiConsole.Ask<string>("Enter search term (or 'exit' to quit): ");
+
+    //         if (input.Equals("exit", StringComparison.OrdinalIgnoreCase))
+    //             break;
+
+    //         // Buscar en tiempo real (case-insensitive)
+    //         var results = items.Where(item => item.Contains(input, StringComparison.OrdinalIgnoreCase)).ToList();
+
+    //         if (results.Any())
+    //         {
+    //             AnsiConsole.MarkupLine("[bold green]Results:[/]");
+    //             foreach (var result in results)
+    //             {
+    //                 AnsiConsole.MarkupLine(result);
+    //             }
+    //         }
+    //         else
+    //         {
+    //             AnsiConsole.MarkupLine("[bold red]No results found.[/]");
+    //         }
+
+    //         // Esperar 3 segundos antes de limpiar la pantalla
+    //         Thread.Sleep(3000);
+    //     }
+    // }
+
 }
